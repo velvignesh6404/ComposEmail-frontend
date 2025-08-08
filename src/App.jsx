@@ -15,12 +15,12 @@
       setLoading(true);
       setError('');
       try {
-        const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://composeemailbackend-env.eba-try5qipy.eu-north-1.elasticbeanstalk.com";
+        const backendUrl = "/api/proxy"; // this calls the Vercel serverless function
+          const response = await axios.post(backendUrl, {
+            emailContent,
+            tone
+          });
 
-        const response = await axios.post(`${backendUrl}/api/email/generate`, {
-          emailContent,
-          tone 
-        });
 
         setGeneratedReply(typeof response.data === 'string' ? response.data : JSON.stringify(response.data));
       } catch (error) {
