@@ -15,7 +15,7 @@
       setLoading(true);
       setError('');
       try {
-        const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://ComposeEmailBackend-env.eba-try5qipy.eu-north-1.elasticbeanstalk.com";
+        const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://composeemailbackend-env.eba-try5qipy.eu-north-1.elasticbeanstalk.com";
 
         const response = await axios.post(`${backendUrl}/api/email/generate`, {
           emailContent,
