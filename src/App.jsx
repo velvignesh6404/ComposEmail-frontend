@@ -15,10 +15,13 @@
       setLoading(true);
       setError('');
       try {
-        const response = await axios.post("http://localhost:8080/api/email/generate", {
-        emailContent,
-        tone 
+        const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:8080";
+
+        const response = await axios.post(`${backendUrl}/api/email/generate`, {
+          emailContent,
+          tone 
         });
+
         setGeneratedReply(typeof response.data === 'string' ? response.data : JSON.stringify(response.data));
       } catch (error) {
         setError('Failed to generate email reply. Please try again');
