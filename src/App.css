@@ -1,0 +1,293 @@
+/* Advanced, Immersive Glassmorphism UI for React/MUI v5 */
+
+/* 0. Import modern variable font (Poppins) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400..900&display=swap');
+
+/* Unique, Artistic Futuristic Glassmorphism for React/MUI v5 */
+
+/* Modern Fluid Animated Backdrop */
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
+  min-height: 100vh;
+  color: #eaf5f6;
+  background: #0d1b2a;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+/* Animated, liquid blob gradients */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  border-radius: 55% 45% 40% 60% / 55% 40% 60% 45%;
+  opacity: 0.31;
+  filter: blur(56px);
+  pointer-events: none;
+  animation: morphMove 23.5s ease-in-out infinite alternate;
+}
+
+body::before {
+  width: 690px; height: 570px;
+  left: -120px; top: -110px;
+  background: radial-gradient(ellipse at 33% 60%, #43f3fa 0%, #395fec 80%, #5ac4f6 100%);
+}
+
+body::after {
+  width: 500px; height: 365px;
+  right: -140px; bottom: -95px;
+  background: radial-gradient(circle at 60% 20%, #2efcd5 0%, #35baf2 80%, #2879b2 100%);
+  opacity: 0.16;
+  animation-delay: 7s;
+}
+
+@keyframes morphMove {
+  0% { transform: scale(1) rotateZ(0deg); }
+  47% { transform: scale(1.07) rotateZ(13deg); }
+  100% { transform: scale(1.05) rotateZ(-9deg); }
+}
+
+/* Glass overlay layer */
+.glass-overlay {
+  position: absolute;
+  z-index: 1;
+  left: 54px; top: 24px;
+  width: 80%;
+  max-width: 410px;
+  height: 88vh;
+  background: linear-gradient(120deg, rgba(106,193,255,0.07) 30%, rgba(200,255,255,0.11) 100%);
+  border-radius: 48px 60px 38px 55px / 46px 58px 44px 57px;
+  backdrop-filter: blur(25px) saturate(1.13);
+  box-shadow: 0 12px 60px #41ebfc0f, 0 8px 88px #44e6e622;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .glass-overlay { left: 0; width: 95vw; border-radius: 40px; }
+}
+@media (max-width: 550px) {
+  .glass-overlay { display: none; }
+}
+
+/* Main Container */
+.MuiContainer-root {
+  position: relative;
+  z-index: 2;
+  background:
+    linear-gradient(122deg, rgba(41,56,71,0.98) 80%, rgba(86,246,235,0.045) 100%),
+    linear-gradient(222deg, rgba(147,241,241,0.06) 60%, rgba(140,252,240,0.07) 100%);
+  border-radius: 42px 24px 56px 38px / 36px 42px 24px 51px;
+  padding: 3.4rem 3rem !important;
+  box-shadow:
+    0 8px 38px -10px #00bff082,
+    0 1.8px 7.7px #a6ebff0e,
+    0 0 0.3rem 1px #a7f0e344;
+  margin-top: 44px;
+  margin-bottom: 2.3rem;
+  backdrop-filter: blur(21px) saturate(1.34);
+  border: 1.8px solid rgba(93,255,247, 0.19);
+}
+
+@media (max-width: 700px) {
+  .MuiContainer-root {
+    padding: 1.27rem !important;
+    border-radius: 22px;
+    margin-top: 17px;
+  }
+}
+
+/* Title */
+h1, .MuiTypography-h3 {
+  font-size: 2.3rem;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 1.23px;
+  background: linear-gradient(92deg,#48f0e1 15%,#50f7dc 60%,#9ee8ff 100%);
+  background-clip: text; -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 12px #7ef8aeaa);
+  animation: neonPulse 2.4s infinite alternate;
+}
+
+@keyframes neonPulse {
+  0%,100% { filter: drop-shadow(0 0 19px #4af7deaf); }
+  60% { filter: drop-shadow(0 0 29px #a8ffeeb6); }
+}
+
+/* Inputs */
+.MuiTextField-root, .MuiFormControl-root {
+  background: rgba(255,255,255,0.13) !important;
+  border-radius: 21px !important;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 10px #35f0bc1e;
+}
+
+.MuiOutlinedInput-root {
+  color: #e9fff8 !important;
+  font-weight: 500;
+}
+
+.MuiInputLabel-root {
+  color: #9fe6d7 !important;
+  opacity: 0.90 !important;
+  font-weight: 500;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: #93eeecca !important;
+  border-width: 2.6px !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  box-shadow: 0 0 0 2px #84ecff8e;
+  border-color: #84ecff !important;
+}
+
+.MuiSelect-icon { color: #73fff7 !important; }
+
+.MuiMenu-paper {
+  background: rgba(40,45,74,0.97) !important;
+  color: #eef8ff !important;
+  backdrop-filter: blur(12px);
+}
+
+/* Buttons */
+.MuiButton-contained {
+  background: linear-gradient(90deg,#26ffe4,#44a1fa 80%);
+  color: #252e44 !important;
+  font-weight: 700;
+  border-radius: 13px;
+  font-size: 1.16rem;
+  padding: 0.85rem 0;
+  letter-spacing: 1.11px;
+  box-shadow: 0 3px 16px -4px #48f2ec, 0 2px 17px #4affed33;
+  transition: all 0.26s cubic-bezier(.42,1.85,.46,.9);
+}
+
+.MuiButton-contained:hover {
+  background: linear-gradient(90deg,#44a1fa 12%,#26ffe4 88%);
+  color: #111b24 !important;
+  transform: translateY(-2px) scale(1.043);
+  box-shadow: 0 12px 31px #48d4ffb5, 0 3px 18px #1af3c970;
+}
+
+.MuiButton-outlined {
+  border: 2.8px solid #84ecff !important;
+  color: #84ecff !important;
+  font-weight: 700;
+  border-radius: 13px;
+  background: rgba(109,223,226,0.04) !important;
+  letter-spacing: 0.84px;
+}
+
+.MuiButton-outlined:hover {
+  border-color: #fff !important;
+  color: #fff !important;
+  background: linear-gradient(100deg,#bffffe 0 70%,#83faf9cc 100%);
+  box-shadow: 0 3.5px 17px #67eaf84a;
+}
+
+/* Error message */
+.MuiTypography-root[color='error'] {
+  background: linear-gradient(90deg,#ff9b9b 30%,#fffafa 100%);
+  color: #4a0f0f !important;
+  padding: 13px 22px;
+  font-weight: 700;
+  border-radius: 13px;
+  border: 2.1px solid #ffdaea70;
+  margin-top: 2.1rem;
+  font-size: 1.08rem;
+  letter-spacing: 1px;
+}
+
+/* Generated reply box */
+.generated-reply {
+  background: linear-gradient(115deg,rgba(136,255,239,0.28) 0%,rgba(61,87,152,0.44) 100%);
+  padding: 1.55rem 1.25rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 58px #26ffe74a, 0 9px 35px #44e6ff43;
+  margin-top: 2.8rem;
+  animation: slideUpPop 0.65s cubic-bezier(.46,1.82,.36,1) both;
+  border: 1.7px solid #9cecffe8;
+  font-size: 1.13rem;
+  color: #fafffa;
+  position: relative;
+  overflow: hidden;
+}
+
+.generated-reply::before {
+  content: "";
+  position: absolute;
+  top: -32px;
+  left: 0; right: 0;
+  width: 288px;
+  height: 104px;
+  background: radial-gradient(circle, #b7fffa 12%, transparent 70%);
+  opacity: 0.22;
+  margin: auto;
+}
+
+@keyframes slideUpPop {
+  0% { opacity: 0; transform: translateY(32px) scale(0.98);}
+  62% { opacity: 1; transform: translateY(-4px) scale(1.03);}
+  100% { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+/* Placeholder text in dark fields */
+.MuiInputBase-input::placeholder {
+  color: #c7fafb;
+  opacity: 0.87;
+}
+
+/* Sleek Glassmorphism Error */
+.error-message {
+  background: rgba(255, 45, 45, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 80, 80, 0.3);
+  color: #ff7b7b;
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(255, 60, 60, 0.3);
+  
+  /* Centering & spacing */
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 14px auto 0 auto; /* adds space from the button */
+  text-align: center;
+  max-width: fit-content;
+  position: relative;
+  top: 10px; /* gentle drop below button */
+  
+  animation: glowError 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glowError {
+  0%   { box-shadow: 0 0 6px rgba(255, 60, 60, 0.25); }
+  100% { box-shadow: 0 0 12px rgba(255, 60, 60, 0.45); }
+}
+
+.error-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Center the container with flex */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px; /* matches mb:3 from MUI */
+}
+
+/* Style the logo image size */
+.logo-image {
+  height: 100px;
+  width: auto;
+}
+
