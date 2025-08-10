@@ -2,6 +2,8 @@
 
 https://compos-email.vercel.app/
 
+<img width="1363" height="763" alt="image" src="https://github.com/user-attachments/assets/be71c0d4-bcb6-407e-8855-2b6a2ebafc66" />
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
